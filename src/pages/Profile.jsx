@@ -48,36 +48,42 @@ const Profile = () => {
   return (
     <>
       <Navbar />
-      <section className="container text-center mt-4">
-        <h1>Profile Page</h1>
-        <p className="fs-4 py-2">
-          {data}{" "}
-          <span className="text-danger fw-semibold">
-            {user.charAt(0).toUpperCase() + user.slice(1)}
-          </span>
-        </p>
+      {data ? (
+        <section className="container">
+          <div className="row">
+            <div className="col-1 col-lg-3"></div>
+            <div className="col-10 col-lg-6 text-center mt-4">
+              <h1>Profile Page</h1>
+              <p className="fs-4 py-2">
+                {data}{" "}
+                <span className="text-danger fw-semibold">
+                  {user.charAt(0).toUpperCase() + user.slice(1)}
+                </span>
+              </p>
 
-        <div className="row mt-4">
-          <div className="col-md-4"></div>
-          <div className="col-md-4">
-            <div className="card">
-              <div className="card-body">
-                <BsPersonCircle
-                  style={{ fontSize: "10rem" }}
-                  className="px-3"
-                />
+              <div className="mt-4">
+                <div className="card">
+                  <div className="card-body">
+                    <BsPersonCircle
+                      style={{ fontSize: "10rem" }}
+                      className="px-3"
+                    />
+                  </div>
+                </div>
+                <button
+                  className="btn btn-outline-danger rounded-pill mt-4 w-100"
+                  onClick={logoutHandler}
+                >
+                  Logout
+                </button>
               </div>
             </div>
-            <button
-              className="btn btn-outline-danger rounded-pill mt-4 w-100"
-              onClick={logoutHandler}
-            >
-              Logout
-            </button>
+            <div className="col-1 col-lg-3"></div>
           </div>
-          <div className="col-md-4"></div>
-        </div>
-      </section>
+        </section>
+      ) : (
+        <h1 className="display-4 text-center mt-5 fw-medium">LOADING..</h1>
+      )}
     </>
   );
 };

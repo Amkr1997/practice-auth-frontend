@@ -55,42 +55,51 @@ const Login = () => {
     <>
       <Navbar />
 
-      <section
-        className="text-center w-25 mx-auto card pt-4 pb-2 px-4 bg-light"
-        style={{ marginTop: "4rem" }}
-      >
-        <h1 className="pt-2 pb-2">Login Here</h1>
-        <form onSubmit={handleLogin}>
-          <label htmlFor="emailInp" className="form-label fs-4 fw-medium py-2">
-            Email:{" "}
-          </label>
-          <br />
-          <input
-            type="email"
-            id="emailInp"
-            className="py-2 form-control"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <br />
-          <label htmlFor="passInp" className="form-label fs-4 fw-medium py-2">
-            Password:{" "}
-          </label>
-          <br />
-          <input
-            type="password"
-            id="passInp"
-            className="py-2 form-control"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <br />
-          <button className="btn btn-danger w-100">Submit</button>
-        </form>
+      <section className="container" style={{ marginTop: "4rem" }}>
+        <div className="row">
+          <div className="col-1 col-lg-3"></div>
+          <div className="col-10 col-lg-6 text-center card pt-4 pb-2 px-4 bg-light">
+            <h1 className="pt-2 pb-2">Login Here</h1>
+            <form onSubmit={handleLogin}>
+              <label
+                htmlFor="emailInp"
+                className="form-label fs-4 fw-medium py-2"
+              >
+                Email:{" "}
+              </label>
+              <br />
+              <input
+                type="email"
+                id="emailInp"
+                className="py-2 form-control"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <br />
+              <label
+                htmlFor="passInp"
+                className="form-label fs-4 fw-medium py-2"
+              >
+                Password:{" "}
+              </label>
+              <br />
+              <input
+                type="password"
+                id="passInp"
+                className="py-2 form-control"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <br />
+              <button className="btn btn-danger w-100">Submit</button>
+            </form>
 
-        <p className="pt-3">
-          New here, <Link to={`/signUp`}>Sign Up</Link>
-        </p>
+            <p className="pt-3">
+              New here, <Link to={`/signUp`}>Sign Up</Link>
+            </p>
+          </div>
+          <div className="col-1 col-lg-3"></div>
+        </div>
       </section>
     </>
   );

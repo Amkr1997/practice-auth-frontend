@@ -68,57 +68,69 @@ const SignUp = () => {
   return (
     <>
       <Navbar />
-      <section
-        className="text-center w-25 mx-auto card pt-4 pb-2 px-4 bg-light"
-        style={{ marginTop: "4rem" }}
-      >
-        <h1 className="pt-2 pb-2">Signup Here</h1>
-        <form onSubmit={handleSignUp}>
-          <label htmlFor="nameInp" className="form-label fs-4 fw-medium py-2">
-            Username:{" "}
-          </label>
-          <br />
-          <input
-            type="text"
-            id="nameInp"
-            className="py-2 form-control"
-            name="userName"
-            value={formData.userName}
-            onChange={handleChange}
-          />
-          <br />
-          <label htmlFor="emailInp" className="form-label fs-4 fw-medium py-2">
-            Email:{" "}
-          </label>
-          <br />
-          <input
-            type="email"
-            id="emailInp"
-            className="py-2 form-control"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-          />
-          <br />
-          <label htmlFor="passInp" className="form-label fs-4 fw-medium py-2">
-            Password:{" "}
-          </label>
-          <br />
-          <input
-            type="password"
-            id="passInp"
-            className="py-2 form-control"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-          />
-          <br />
-          <button className="btn btn-danger w-100">Submit</button>
-        </form>
+      <section className="container" style={{ marginTop: "4rem" }}>
+        <div className="row">
+          <div className="col-1 col-lg-3"></div>
+          <div className="col-10 col-lg-6 text-center card pt-4 pb-2 px-4 bg-light">
+            <h1 className="pt-2 pb-2">Signup Here</h1>
+            <form onSubmit={handleSignUp}>
+              <label
+                htmlFor="nameInp"
+                className="form-label fs-4 fw-medium py-2"
+              >
+                Username:{" "}
+              </label>
+              <br />
+              <input
+                type="text"
+                id="nameInp"
+                className="py-2 form-control"
+                name="userName"
+                value={formData.userName}
+                onChange={handleChange}
+              />
+              <br />
+              <label
+                htmlFor="emailInp"
+                className="form-label fs-4 fw-medium py-2"
+              >
+                Email:{" "}
+              </label>
+              <br />
+              <input
+                type="email"
+                id="emailInp"
+                className="py-2 form-control"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+              />
+              <br />
+              <label
+                htmlFor="passInp"
+                className="form-label fs-4 fw-medium py-2"
+              >
+                Password:{" "}
+              </label>
+              <br />
+              <input
+                type="password"
+                id="passInp"
+                className="py-2 form-control"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+              />
+              <br />
+              <button className="btn btn-danger w-100">Submit</button>
+            </form>
 
-        <p className="pt-3">
-          Already a member, <Link to={`/`}>Login</Link>
-        </p>
+            <p className="pt-3">
+              Already a member, <Link to={`/`}>Login</Link>
+            </p>
+          </div>
+          <div className="col-1 col-lg-3"></div>
+        </div>
       </section>
     </>
   );
